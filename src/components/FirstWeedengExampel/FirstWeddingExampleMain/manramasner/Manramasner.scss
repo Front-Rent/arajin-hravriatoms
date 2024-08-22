@@ -1,0 +1,68 @@
+.manramasner {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: all 0.3s ease; // Add transition for smooth changes
+
+  & > p {
+    font-size: 30px;
+    margin-bottom: 6px;
+    transition: font-size 0.3s ease, margin-bottom 0.3s ease; // Transition for font size and margin
+  }
+
+  &-txt > p {
+    font-size: 20px;
+    transition: font-size 0.3s ease; // Transition for font size
+  }
+
+  &-detals {
+    margin-top: 50px;
+    display: flex;
+    gap: 150px;
+    transition: gap 0.3s ease, flex-direction 0.3s ease; // Transition for gap and flex-direction
+  }
+
+  @media (max-width: 1200px) {
+    &-detals {
+      gap: 100px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    &-detals {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 20px;
+    gap: 30px;
+
+    & > p {
+      font-size: 24px;
+    }
+
+    &-txt > p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 10px;
+    gap: 20px;
+
+    & > p {
+      font-size: 18px;
+    }
+
+    &-txt > p {
+      font-size: 16px;
+    }
+  }
+}

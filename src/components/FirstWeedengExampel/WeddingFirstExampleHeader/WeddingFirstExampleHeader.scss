@@ -1,0 +1,72 @@
+.weedeng-first-example-header-nav {
+  width: 100%;
+  height: 80px;
+  padding: 0 200px 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 99;
+
+  &-menu {
+    width: 80%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    & > li {
+      position: relative;
+      overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      &::before {
+        content: "";
+        width: 0%;
+        position: absolute;
+        border: 2px solid pink;
+        left: -10px;
+        bottom: 0px;
+        transition: 0.4s;
+      }
+      &:hover::before {
+        display: block;
+        width: 110%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .weedeng-first-example-header-nav {
+    padding: 0 80px;
+    transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .weedeng-first-example-header-nav {
+    padding: 0 10px;
+    transition: padding 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .weedeng-first-example-header-nav > ul {
+    display: none;
+    transition: display 0.3s ease;
+  }
+
+  .drop-dawn {
+    display: block;
+    transition: display 0.3s ease;
+  }
+
+  .drop-dawn-menu-ul {
+    font-size: 8px;
+    transition: font-size 0.5s ease;
+  }
+}

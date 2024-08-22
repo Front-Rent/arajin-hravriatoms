@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "vrdzagir";
+  src: url("../../../../fonts/fonter.am_vrdznagir/Vrdznagir.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ekexeci {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 55px;
+  transition: all 0.3s ease;
+
+  &-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 10px 32px -30px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 32px -30px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 32px -30px rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    &:hover {
+      filter: drop-shadow(1px 1px 10px pink);
+    }
+    & > img {
+      left: 2%;
+      top: 10%;
+      position: absolute;
+      width: 100%;
+      transition: width 0.3s ease;
+    }
+  }
+
+  &-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: margin-bottom 0.3s ease;
+    & > h3 {
+      font-family: "vrdzagir";
+      font-size: 30px;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    & > p {
+      font-family: "vrdzagir";
+      font-weight: 300;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      transition: margin-bottom 0.3s ease;
+    }
+
+    & span,
+    p {
+      color: #999999;
+    }
+
+    & p:nth-child(4) {
+      color: #d291bc;
+    }
+  }
+}
+
+.loader {
+  width: 34.8px;
+  height: 34.8px;
+  position: relative;
+  transform: rotate(45deg);
+  transition: width 0.3s ease, height 0.3s ease; // Transition for loader size
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 0 50%;
+  background: #0000;
+  background-image: radial-gradient(
+    circle 8.2px at 50% 50%,
+    #0000 94%,
+    #ff4747
+  );
+}
+
+.loader:after {
+  animation: pulse-ytk0dhmd 1s infinite;
+  transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse-ytk0dhmd {
+  to {
+    transform: perspective(336px) translateZ(168px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ekexeci {
+    gap: 30px;
+    padding-bottom: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ekexeci {
+    gap: 20px;
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ekexeci {
+    gap: 15px;
+    padding-bottom: 25px;
+
+    &-txt > p,
+    h3 {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .ekexeci {
+    gap: 10px;
+    padding-bottom: 15px;
+
+    &-txt > p,
+    h3 {
+      margin-bottom: 8px;
+    }
+  }
+}

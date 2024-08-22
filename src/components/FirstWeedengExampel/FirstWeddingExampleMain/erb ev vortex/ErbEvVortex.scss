@@ -1,0 +1,162 @@
+.erb-ev-vortex {
+  width: 100%;
+  height: 60vh;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+  background-color: #ffeef1;
+
+  > h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &-or {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f9f9f9;
+    transition: all 0.4s ease;
+    border-radius: 20px;
+    &:hover {
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .amis {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-right: auto;
+  }
+
+  .between-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .shabatva-or {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .or {
+      font-size: 30px;
+    }
+
+    .tari {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  }
+
+  .jam {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-left: auto;
+  }
+
+  &-restoran {
+    opacity: 0.7;
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+      margin: 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .erb-ev-vortex {
+    gap: 30px;
+    transition: all 0.5s ease;
+
+    > h2 {
+      font-size: 32px;
+      transition: font-size 0.5s ease;
+    }
+
+    &-or {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.5s ease;
+
+      .amis,
+      .jam {
+        font-size: 28px;
+        margin: 10px 0;
+        transition: font-size 0.5s ease, margin 0.5s ease;
+      }
+
+      .between-box {
+        width: 100%;
+        padding: 15px;
+        transition: width 0.5s ease, padding 0.5s ease;
+
+        .shabatva-or,
+        .tari {
+          font-size: 16px;
+          transition: font-size 0.5s ease;
+        }
+
+        .or {
+          font-size: 28px;
+          transition: font-size 0.5s ease;
+        }
+      }
+    }
+
+    &-restoran h2 {
+      font-size: 22px;
+      transition: font-size 0.5s ease;
+    }
+  }
+}
+
+.svg {
+  width: 100%;
+  position: absolute;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 155px;
+  transform: rotateY(180deg);
+  background: transparent;
+  top: 510px;
+}
+
+.shape-fill {
+  fill: #ffeef1;
+}
+
+.svg-second {
+  width: 100%;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 84px;
+  transform: rotateX(180deg);
+  position: absolute;
+  bottom: -82px;
+}
+
+.shape-fill-second {
+  fill: #ffeef1;
+}

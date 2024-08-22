@@ -1,0 +1,22 @@
+.valid-phone {
+  .phone-input-wrapper {
+    position: relative;
+  }
+
+  .phone-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    &.invalid {
+      border-color: red;
+    }
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+}
