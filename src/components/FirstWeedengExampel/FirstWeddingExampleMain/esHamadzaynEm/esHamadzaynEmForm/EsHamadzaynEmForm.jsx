@@ -34,14 +34,14 @@ const EsHamadzaynEmForm = ({ handleHidden, setShowGallery }) => {
     const guests = formData.get("guests");
 
     if (!username || !phoneNumber || !guests) {
-      dispatch(setError("Пожалуйста, заполните все поля."));
+      dispatch(setError("Խնդրում ենք լրացնել բոլոր դաշտերը։"));
       return;
     }
 
     if (!isValidPhoneNumber(phoneNumber)) {
       dispatch(
         setError(
-          "Неверный формат номера телефона. Пожалуйста, введите номер в формате +374..."
+          "Հեռախոսահամարի սխալ ձևաչափ։ Խնդրում ենք մուտքագրել հեռախոսահամարը +374 ձևաչափով։"
         )
       );
       return;
@@ -50,24 +50,27 @@ const EsHamadzaynEmForm = ({ handleHidden, setShowGallery }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/submit-form", {
-        username,
-        phoneNumber,
-        guests,
-      });
+      const response = await axios.post(
+        "https://porcnakanserverhraviratoms.netlify.app/.netlify/functions/server/submit-form",
+        {
+          username,
+          phoneNumber,
+          guests,
+        }
+      );
 
       if (response.status === 200) {
-        dispatch(setSuccess("Форма успешно отправлена!"));
+        dispatch(setSuccess("Ֆորման հաջողությամբ ուղարկվեց։"));
         e.target.reset();
         handleHidden();
         dispatch(setError(""));
       } else {
-        dispatch(setError(response.data || "Произошла ошибка."));
+        dispatch(setError(response.data || "Փորձեք կրկին։"));
       }
     } catch (error) {
       dispatch(
         setError(
-          "Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова."
+          "Սխալ առաջացավ ֆորման ուղարկելու ընթացքում։ Խնդրում ենք փորձեք կրկին։"
         )
       );
     } finally {
