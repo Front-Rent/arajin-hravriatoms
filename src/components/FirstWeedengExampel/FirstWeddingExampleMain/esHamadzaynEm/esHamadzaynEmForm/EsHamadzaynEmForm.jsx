@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+
 import PhoneValidation from "../../../../PhoneValidation/PhoneValidation";
+
 import {
   setIsOpen,
   setError,
@@ -9,6 +11,7 @@ import {
 } from "../../../../../store/Slices/formSlice";
 import ButtonPickUp from "../../../../ButtonPickUp/ButtonPickUp";
 import Loading from "../../../../Loading/Loading";
+
 import "./EsHamadzaynEmForm.scss";
 
 const EsHamadzaynEmForm = ({ handleHidden, setShowGallery }) => {
