@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-
+import sendEmail from "../../../../../email";
 import PhoneValidation from "../../../../PhoneValidation/PhoneValidation";
-
 import {
   setIsOpen,
   setError,
@@ -11,7 +9,6 @@ import {
 } from "../../../../../store/Slices/formSlice";
 import ButtonPickUp from "../../../../ButtonPickUp/ButtonPickUp";
 import Loading from "../../../../Loading/Loading";
-
 import "./EsHamadzaynEmForm.scss";
 
 const EsHamadzaynEmForm = ({ handleHidden, setShowGallery }) => {
@@ -53,23 +50,11 @@ const EsHamadzaynEmForm = ({ handleHidden, setShowGallery }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "https://porcnakanserverhraviratoms.netlify.app/.netlify/functions/server/submit-form",
-        {
-          username,
-          phoneNumber,
-          guests,
-        }
-      );
-
-      if (response.status === 200) {
-        dispatch(setSuccess("Ֆորման հաջողությամբ ուղարկվեց։"));
-        e.target.reset();
-        handleHidden();
-        dispatch(setError(""));
-      } else {
-        dispatch(setError(response.data || "Փորձեք կրկին։"));
-      }
+      await sendEmail(username, phoneNumber, guests);
+      dispatch(setSuccess("Ֆորման հաջողությամբ ուղարկվեց։"));
+      e.target.reset();
+      handleHidden();
+      dispatch(setError(""));
     } catch (error) {
       dispatch(
         setError(
