@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     gap: 35px;
     & > h2 {
       margin-top: 80px;
@@ -78,7 +79,7 @@
 
 @media screen and (max-width: 700px) {
   .hethashvark {
-    height: 500px;
+    height: 700px;
 
     &-base {
       height: 300px;
