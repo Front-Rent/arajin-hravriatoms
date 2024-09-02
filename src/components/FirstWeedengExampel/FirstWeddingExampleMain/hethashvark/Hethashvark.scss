@@ -1,26 +1,27 @@
 .hethashvark {
   width: 100%;
-  height: 500px;
-  background: rgb(238, 179, 199);
+  height: 400px;
   display: flex;
+  padding: 0 100px 0 100px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 100px 0 100px;
+  position: relative;
   gap: 40px;
+  background-color: #f5f0ed;
+
   &-header {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     gap: 35px;
     & > h2 {
-      margin-top: 80px;
-      font-size: 40px;
+      font-size: 23px;
     }
-    & > p {
-      font-size: 20px;
-      opacity: 0.6;
+    & > img {
+      width: 200px;
+      top: 15px;
     }
   }
   &-base {
@@ -28,12 +29,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
+    gap: 27px;
 
     & > .base {
-      width: 15%;
-      height: 150px;
-      border-radius: 25px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
       display: flex;
       background-color: #fff;
       align-items: center;
@@ -43,17 +44,17 @@
       &:hover {
         box-shadow: 1px 1px 20px rgb(248, 162, 175);
       }
-      > p {
+      p {
         font-family: "dzeragir";
         font-weight: 500;
-        font-size: 40px;
+        font-size: 20px;
         transition: all 0.3s ease;
-        color: rgb(255, 173, 229);
+        color: black;
       }
       & > span {
-        font-size: 25px;
+        font-size: 13px;
         transition: all 0.3s ease;
-        color: rgb(255, 171, 185);
+        color: black;
         &:hover {
           text-shadow: black;
         }
@@ -64,50 +65,140 @@
       }
     }
   }
-  &-placeholder {
+  & > p {
     text-align: center;
+    font-family: "dzeragir";
+    font-size: 20px;
+    margin-top: 30px;
   }
 }
 
+.poqr-xot {
+  width: 100px;
+  transform: rotate(-50deg);
+  position: absolute;
+  left: 430px;
+}
+
+.poqr-xot-second {
+  width: 100px;
+  transform: rotate(50deg) rotateY(180deg);
+  position: absolute;
+  right: 430px;
+}
 @media screen and (max-width: 1080px) {
   .hethashvark {
-    .base {
-      width: 20%;
+    padding: 0 50px;
+
+    &-header {
+      gap: 25px;
+      & > h2 {
+        font-size: 20px;
+      }
+      & > img {
+        width: 150px;
+        top: 10px;
+      }
     }
+    &-base {
+      gap: 20px;
+      .base {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .poqr-xot {
+    left: 233px;
+  }
+
+  .poqr-xot-second {
+    right: 233px;
   }
 }
 
 @media screen and (max-width: 700px) {
   .hethashvark {
-    height: 700px;
+    height: 600px;
+    padding: 0 30px;
 
-    &-base {
-      height: 300px;
-      flex-wrap: wrap;
-
-      .base {
-        height: 110px;
-        width: 40%;
+    &-header {
+      gap: 20px;
+      & > h2 {
+        font-size: 18px;
+      }
+      & > img {
+        width: 130px;
+        top: 8px;
       }
     }
+    &-base {
+      height: 250px;
+      gap: 15px;
+      flex-wrap: wrap;
+      .base {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  .poqr-xot {
+    left: 38px;
+    width: 80px;
+  }
+
+  .poqr-xot-second {
+    right: 36px;
+    width: 80px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hethashvark {
-    height: 950px;
+    padding: 10px;
 
-    &-base {
-      height: 600px;
-      flex-wrap: wrap;
+    &-header {
+      img {
+        width: 60px;
+      }
 
-      .base {
-        height: 120px;
-        width: 100%;
+      h2 {
+        font-size: 18px;
       }
     }
-    &-header p {
-      font-size: 18px;
+
+    &-base {
+      gap: 15px;
+
+      .base {
+        max-width: 120px;
+        padding: 8px;
+
+        p {
+          font-size: 28px;
+        }
+
+        span {
+          small {
+            font-size: 12px;
+          }
+        }
+      }
     }
+
+    p {
+      font-size: 14px;
+    }
+  }
+  .poqr-xot {
+    left: 80px;
+    width: 80px;
+    top: 165px;
+  }
+
+  .poqr-xot-second {
+    top: 165px;
+    right: 80px;
+    width: 80px;
   }
 }

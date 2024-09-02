@@ -1,6 +1,10 @@
 import { useEffect, useRef, useReducer, useCallback } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
+
+import heart from "../../../../assets/images/WeddingImages/WeddingExampleImages/heart.png";
+import poqrxot from "../../../../assets/images/WeddingImages/WeddingExampleImages/poqr_xot-removebg-preview.png";
+
 import "./Hethashvark.scss";
 
 const ACTIONS = {
@@ -94,8 +98,8 @@ const Hethashvark = () => {
   return (
     <section id="hethasvark" className="hethashvark">
       <div className="hethashvark-header">
-        <h2>Հետհաշվարկ</h2>
-        <p>Մինչև արարողություն մնացել է․․․</p>
+        <img src={heart} alt="img" />
+        <h2>Մինչև արարողություն մնացել է․․․</h2>
       </div>
       <animated.div className="hethashvark-base" style={props} ref={ref}>
         <div className="hethashvark-base-days base">
@@ -123,9 +127,9 @@ const Hethashvark = () => {
           </span>
         </div>
       </animated.div>
-      <div className="hethashvark-placeholder">
-        <p>Խնդրում ենք էջի ներքևի հատվածում լրացրեք ձեր տվյալները</p>
-      </div>
+      <p>Խնդրում ենք էջի ներքևի հատվածում լրացրեք ձեր տվյալները</p>
+      <img src={poqrxot} alt="" className="poqr-xot" />
+      <img src={poqrxot} alt="" className="poqr-xot-second" />
     </section>
   );
 };

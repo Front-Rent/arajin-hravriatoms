@@ -3,6 +3,31 @@
   z-index: 1000;
   display: none;
   transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.gallery {
+  width: 180px;
+  height: 120px;
+  position: absolute;
+  right: 5%;
+  top: 28px;
+  z-index: 999;
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 .paper-content {
@@ -11,7 +36,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 38%;
+  width: 32.5%;
   height: 44vh;
   background: #ffffff;
   border-radius: 12px;
@@ -24,14 +49,27 @@
 }
 
 .paper-content.show {
-  display: block;
+  display: flex;
   opacity: 1;
+  flex-direction: column;
+  align-items: start;
   transform: translate(-50%, -50%) scale(1);
 }
 
 .paper-content.hide {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.9);
+}
+.close-button {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  background-color: #dc3545;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 .modal-close {
@@ -108,20 +146,18 @@
 }
 
 .show-form-button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #f5f0ed;
+  color: gray;
   padding: 12px 24px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease, transform 0.2s ease;
   position: absolute;
-  top: -150px;
   left: -55px;
 }
 
 .show-form-button:hover {
-  background-color: #0056b3;
   transform: scale(1.05);
 }
 
@@ -152,6 +188,10 @@
 .country-list {
   width: 300px !important;
   max-height: 100px !important;
+}
+
+.react-tel-input .form-control {
+  width: 400px !important;
 }
 
 @media (max-width: 1200px) {
@@ -195,6 +235,10 @@
     padding: 12px;
   }
 
+  .react-tel-input .form-control {
+    width: 350px !important;
+  }
+
   .modal-close {
     width: 28px;
     height: 28px;
@@ -205,12 +249,16 @@
     top: -80px;
     left: -30px;
   }
+  .gallery {
+    width: 160px;
+  }
 }
 
 @media (max-width: 400px) {
   .paper-content {
-    height: 60vh;
-    max-width: 350px;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
   }
 
   .paper-content.show {
@@ -219,8 +267,12 @@
 
   .input-field,
   .form-control,
-  .input-field-code {
+  .input-field-guests {
     padding: 10px;
+    width: 300px;
+  }
+  .react-tel-input .form-control {
+    width: 300px !important;
   }
 
   .modal-close {
@@ -232,6 +284,13 @@
   .show-form-button {
     top: -60px;
     left: -20px;
+  }
+  .gallery {
+    left: 31%;
+    top: 0;
+  }
+  .pick-up-button {
+    left: 100px;
   }
 }
 

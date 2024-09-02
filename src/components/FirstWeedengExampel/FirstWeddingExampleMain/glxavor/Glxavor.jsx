@@ -7,6 +7,8 @@ import image4 from "../../../../assets/images/WeddingImages/WeddingExampleImages
 
 import simvol from "../../../../assets/images/WeddingImages/WeddingExampleImages/ornament.png";
 
+import xot from "../../../../assets/images/WeddingImages/WeddingExampleImages/xot.png";
+
 import "./Glxavor.scss";
 
 const Glxavor = () => {
@@ -30,20 +32,23 @@ const Glxavor = () => {
   }, [images.length]);
 
   return (
-    <section
-      className={`glxavor ${fadeOut ? "fade-out" : "fade-in"}`}
-      style={{
-        "--background-image": `url(${images[currentIndex]})`,
-      }}
-    >
-      <div className="glxavor-content">
-        <span>հարսանիքի հրավեր</span>
-        <h1>Մարի & Սամվել</h1>
+    <>
+      <section
+        className={`glxavor ${fadeOut ? "fade-out" : "fade-in"}`}
+        style={{
+          "--background-image": `url(${images[currentIndex]})`,
+        }}
+      >
+        <div className="glxavor-content">
+          <span>հարսանիքի հրավեր</span>
+          <h1>Մարի & Սամվել</h1>
 
-        <img src={simvol} alt="img" />
-        <p>Հրավիրում ենք ձեզ կիսելու այս հրաշալի օրը մեզ հետ</p>
-      </div>
-    </section>
+          <img src={simvol} alt="img" />
+          <p>Հրավիրում ենք ձեզ կիսելու այս հրաշալի օրը մեզ հետ</p>
+        </div>
+      </section>
+      <img src={xot} alt="img" className="xot" />
+    </>
   );
 };
 
