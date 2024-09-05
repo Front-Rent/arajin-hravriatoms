@@ -109,6 +109,13 @@
   }
 }
 
+.ekexeci-map {
+  position: absolute;
+  top: 0px;
+  left: 00px;
+  z-index: 9999;
+}
+
 @media (max-width: 1200px) {
   .ekexeci {
     gap: 30px;

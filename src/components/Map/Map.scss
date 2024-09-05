@@ -1,0 +1,62 @@
+.map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: height 0.5s ease, opacity 0.5s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  .close-map {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      color: #ff4d4d;
+    }
+  }
+
+  .map-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &.ekexeci-map {
+    .map-iframe {
+      &:hover {
+        filter: none;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &.restoran-map {
+    .map-iframe {
+      &:hover {
+        filter: none;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
