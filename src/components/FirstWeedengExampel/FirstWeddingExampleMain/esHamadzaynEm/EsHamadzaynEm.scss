@@ -11,7 +11,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  line-height: 0;
   overflow: hidden;
   align-items: center;
   justify-content: center;
@@ -31,17 +30,16 @@
     color: green;
     margin-top: 10px;
   }
-
-  p {
-    margin: 0;
+  span {
     text-align: center;
     font-family: "armenian-form";
-    color: rgb(219, 73, 97);
+    color: rgb(255, 98, 124);
     font-size: 20px;
     z-index: 9999;
-    color: rgb(255, 98, 124);
     position: absolute;
-    top: 43%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-shadow: 0 0 10px pink;
   }
 }
